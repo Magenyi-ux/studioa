@@ -9,19 +9,47 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 export function WaitlistSection() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({ name, email });
-    
-    toast({
-      title: "You're on the list! 🎉",
-      description: "Thanks for joining the ZediLearn waitlist. We'll be in touch soon.",
-    });
+    setIsSubmitting(true);
 
-    setName('');
-    setEmail('');
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "You're on the list! 🎉",
+          description: "Thanks for joining the ZediLearn waitlist. We'll be in touch soon.",
+        });
+        setName('');
+        setEmail('');
+      } else {
+        const data = await response.json();
+        toast({
+          title: "Oops! Something went wrong",
+          description: data.error || "Failed to join waitlist. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting waitlist:', error);
+      toast({
+        title: "Connection Error",
+        description: "Unable to submit. Please check your internet connection.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -44,6 +72,7 @@ export function WaitlistSection() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
+                    disabled={isSubmitting}
                     className="h-12 text-base"
                   />
                   <Input
@@ -52,11 +81,17 @@ export function WaitlistSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    disabled={isSubmitting}
                     className="h-12 text-base"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full h-12 text-lg font-bold">
-                  Join Waitlist
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full h-12 text-lg font-bold"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Joining...' : 'Join Waitlist'}
                 </Button>
               </form>
             </CardContent>
