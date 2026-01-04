@@ -1,4 +1,4 @@
-# Firebase Studio
+# shit i pooped too hard
 
 This is a NextJS starter in Firebase Studio.
 
