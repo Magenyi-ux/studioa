@@ -9,7 +9,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 export function WaitlistSection() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -72,7 +71,6 @@ export function WaitlistSection() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    disabled={isSubmitting}
                     className="h-12 text-base"
                   />
                   <Input
@@ -81,7 +79,6 @@ export function WaitlistSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    disabled={isSubmitting}
                     className="h-12 text-base"
                   />
                 </div>
@@ -89,9 +86,8 @@ export function WaitlistSection() {
                   type="submit" 
                   size="lg" 
                   className="w-full h-12 text-lg font-bold"
-                  disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Joining...' : 'Join Waitlist'}
+                  Join Waitlist
                 </Button>
               </form>
             </CardContent>

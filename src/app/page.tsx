@@ -5,6 +5,8 @@ import { Header } from '@/components/landing/header';
 import { HeroSection } from '@/components/landing/hero-section';
 import { FeaturesSection } from '@/components/landing/features-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
+import { TestimonialsSection } from '@/components/landing/testimonials-section';
+import { PricingSection } from '@/components/landing/pricing-section';
 import { WaitlistSection } from '@/components/landing/waitlist-section';
 import { Footer } from '@/components/landing/footer';
 import { SplashScreen } from '@/components/splash-screen';
@@ -24,6 +26,8 @@ export default function Home() {
         <HeroSection />
         <FeaturesSection />
         <HowItWorksSection />
+        <TestimonialsSection />
+        <PricingSection />
         <WaitlistSection />
       </main>
       <Footer />

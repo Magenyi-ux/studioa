@@ -24,10 +24,32 @@ export function HeroSection() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4">
             <a href="#waitlist">
-              <Button size="lg" className="font-bold text-lg h-14 w-full sm:w-auto shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105 group">
+              <Button size="lg" className="font-bold text-lg h-14 w-full sm:w-auto shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105 group">
                 Get Early Access <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
+          </div>
+
+          <div className="mt-16 pt-8 border-t border-border/50">
+            <p className="text-sm font-medium text-muted-foreground mb-6">TRUSTED BY STUDENTS FROM TOP UNIVERSITIES</p>
+            <div className="flex flex-wrap gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+               <div className="flex items-center gap-2 font-headline font-bold text-lg">
+                 <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-[10px] text-white">UNILAG</div>
+                 UNILAG
+               </div>
+               <div className="flex items-center gap-2 font-headline font-bold text-lg">
+                 <div className="w-8 h-8 rounded-full bg-red-700 flex items-center justify-center text-[10px] text-white">UI</div>
+                 UI IBADAN
+               </div>
+               <div className="flex items-center gap-2 font-headline font-bold text-lg">
+                 <div className="w-8 h-8 rounded-full bg-yellow-600 flex items-center justify-center text-[10px] text-white">OAU</div>
+                 OAU IFE
+               </div>
+               <div className="flex items-center gap-2 font-headline font-bold text-lg">
+                 <div className="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-[10px] text-white">ABU</div>
+                 ABU ZARIA
+               </div>
+            </div>
           </div>
         </div>
       </div>

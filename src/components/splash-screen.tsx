@@ -28,47 +28,85 @@ export function SplashScreen({ onFinished }: { onFinished: () => void }) {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-700 ${
         animationState === 'fading' ? 'opacity-0' : 'opacity-100'
       }`}
     >
       <style jsx>{`
-        @keyframes dropIn {
+        @keyframes reveal {
           0% {
-            transform: translateY(-80px);
+            transform: translateY(20px);
             opacity: 0;
-          }
-          30% {
-            opacity: 1;
+            filter: blur(10px);
           }
           100% {
             transform: translateY(0);
             opacity: 1;
+            filter: blur(0);
           }
+        }
+
+        @keyframes progress {
+          0% { width: 0%; }
+          100% { width: 100%; }
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         .word {
           display: inline-block;
           opacity: 0;
-          animation: dropIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         #sphere {
-          animation-delay: 0.5s;
+          animation-delay: 0.3s;
         }
 
         #learn {
-          animation-delay: 0.9s;
+          animation-delay: 0.6s;
+        }
+
+        .tagline {
+          opacity: 0;
+          animation: fadeIn 1s ease-out 1.2s forwards;
+        }
+
+        .progress-container {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background: hsl(var(--secondary));
+        }
+
+        .progress-bar {
+          height: 100%;
+          background: hsl(var(--primary));
+          animation: progress 2.8s linear forwards;
         }
       `}</style>
-      <div className={`flex flex-col items-center gap-6 transition-all duration-500 ease-in-out ${animationState === 'drawing' ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
-        <div className="relative w-24 h-24 animate-pulse">
-           <Image src="/logo.png" alt="Logo" fill className="object-contain rounded-full" />
+      <div className={`flex flex-col items-center gap-8 transition-all duration-700 ease-in-out ${animationState === 'drawing' ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
+        <div className="relative w-32 h-32 mb-4">
+           <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl animate-pulse"></div>
+           <Image src="/logo.png" alt="Logo" fill className="object-contain rounded-full relative z-10" />
         </div>
-        <h1 className="text-5xl font-headline font-bold text-foreground">
-          <span id="sphere" className="word">Sphere</span>
-          <span id="learn" className="word text-primary">Learn</span>
-        </h1>
+        <div className="text-center">
+          <h1 className="text-5xl md:text-6xl font-headline font-bold text-foreground tracking-tight">
+            <span id="sphere" className="word">Sphere</span>
+            <span id="learn" className="word text-primary">Learn</span>
+          </h1>
+          <p className="tagline mt-4 text-xl text-muted-foreground font-medium">
+            Study Smarter, Not Harder
+          </p>
+        </div>
+      </div>
+      <div className="progress-container">
+        <div className="progress-bar"></div>
       </div>
     </div>
   );
