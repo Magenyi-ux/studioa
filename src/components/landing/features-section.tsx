@@ -42,16 +42,16 @@ export function FeaturesSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">Everything You Need to Succeed</h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            ZediLearn is packed with features designed to make studying more effective and less stressful.
+            SphereLearn is packed with features designed to make studying more effective and less stressful.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="relative p-8 rounded-2xl bg-background border border-border/50 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-1"
+              className="relative p-8 rounded-3xl bg-background border border-border/50 shadow-xl shadow-primary/5 hover:shadow-primary/10 hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2"
             >
-              <div className="mb-6 p-3 bg-primary/10 rounded-lg w-fit">
+              <div className="mb-6 p-4 bg-primary/10 rounded-2xl w-fit">
                 <feature.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-headline text-lg font-bold mb-3">{feature.title}</h3>

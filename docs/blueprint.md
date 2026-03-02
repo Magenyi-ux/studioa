@@ -1,4 +1,4 @@
-# **App Name**: ZediLearn
+# **App Name**: SphereLearn
 
 ## Core Features:
 

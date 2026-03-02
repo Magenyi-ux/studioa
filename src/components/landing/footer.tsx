@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid md:grid-cols-12 gap-8">
           <div className="md:col-span-4 flex flex-col items-start gap-4">
             <Link href="/" className="text-2xl font-bold font-headline text-foreground">
-              Zedi<span className="text-primary">Learn</span>
+              Sphere<span className="text-primary">Learn</span>
             </Link>
             <p className="text-sm text-muted-foreground">Study Smarter, Not Harder.</p>
             <div className="flex space-x-4 mt-2">
@@ -49,7 +49,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 ZediLearn. All Rights Reserved.</p>
+          <p>&copy; 2025 SphereLearn. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

@@ -9,8 +9,10 @@ export function HeroSection() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-illustration');
 
   return (
-    <section className="relative bg-background pt-20 pb-24 md:pt-28 md:pb-32">
-       <div className="absolute top-0 left-0 -z-10 h-full w-full bg-[radial-gradient(circle_800px_at_50%_200px,hsl(var(--primary)/15%),transparent_80%)]"></div>
+    <section className="relative bg-background pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden">
+       <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 h-[600px] w-full max-w-7xl bg-[radial-gradient(circle_at_center,hsl(var(--primary)/10%),transparent_70%)] opacity-70"></div>
+       <div className="absolute -top-24 -right-24 -z-10 h-96 w-96 rounded-full bg-primary/5 blur-3xl"></div>
+       <div className="absolute top-1/2 -left-24 -z-10 h-96 w-96 rounded-full bg-primary/5 blur-3xl"></div>
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-1 gap-12 items-center">
         <div className="max-w-2xl text-center md:text-left">

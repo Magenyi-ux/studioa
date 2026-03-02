@@ -14,42 +14,42 @@ export function WaitlistSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    try {
-      const response = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email }),
-      });
+    // Show immediate success feedback
+    toast({
+      title: "You're on the list! 🎉",
+      description: "Thanks for joining the SphereLearn waitlist. We'll be in touch soon.",
+    });
 
-      if (response.ok) {
-        toast({
-          title: "You're on the list! 🎉",
-          description: "Thanks for joining the ZediLearn waitlist. We'll be in touch soon.",
-        });
-        setName('');
-        setEmail('');
-      } else {
+    const submittedName = name;
+    const submittedEmail = email;
+    setName('');
+    setEmail('');
+
+    // Perform the API call in the background
+    fetch('/api/waitlist', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name: submittedName, email: submittedEmail }),
+    }).then(async (response) => {
+      if (!response.ok) {
         const data = await response.json();
         toast({
           title: "Oops! Something went wrong",
-          description: data.error || "Failed to join waitlist. Please try again.",
+          description: data.error || "err services err",
           variant: "destructive",
         });
       }
-    } catch (error) {
+    }).catch((error) => {
       console.error('Error submitting waitlist:', error);
       toast({
         title: "Connection Error",
-        description: "Unable to submit. Please check your internet connection.",
+        description: "err services err",
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
-    }
+    });
   };
 
   return (
@@ -58,7 +58,7 @@ export function WaitlistSection() {
         <div className="max-w-xl mx-auto text-center">
           <Card className="p-6 md:p-8 bg-card border-border/50 shadow-lg">
             <CardHeader className="p-0">
-              <CardTitle className="font-headline text-3xl">Be the First to Access ZediLearn</CardTitle>
+              <CardTitle className="font-headline text-3xl">Be the First to Access SphereLearn</CardTitle>
               <CardDescription className="pt-2 text-base max-w-md mx-auto text-muted-foreground">
                 Get early access, exclusive beta invites, and special launch discounts.
               </CardDescription>

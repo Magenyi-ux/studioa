@@ -52,7 +52,7 @@ export function SplashScreen({ onFinished }: { onFinished: () => void }) {
           animation: dropIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
-        #zedi {
+        #sphere {
           animation-delay: 0.5s;
         }
 
@@ -61,7 +61,7 @@ export function SplashScreen({ onFinished }: { onFinished: () => void }) {
         }
       `}</style>
       <h1 className={`text-5xl font-headline font-bold text-foreground transition-all duration-500 ease-in-out ${animationState === 'drawing' ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
-        <span id="zedi" className="word">Zedi</span>
+        <span id="sphere" className="word">Sphere</span>
         <span id="learn" className="word text-primary">Learn</span>
       </h1>
     </div>
