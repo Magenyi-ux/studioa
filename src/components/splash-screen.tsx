@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 type AnimationState = 'start' | 'drawing' | 'fading' | 'finished';
 
@@ -60,10 +61,15 @@ export function SplashScreen({ onFinished }: { onFinished: () => void }) {
           animation-delay: 0.9s;
         }
       `}</style>
-      <h1 className={`text-5xl font-headline font-bold text-foreground transition-all duration-500 ease-in-out ${animationState === 'drawing' ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
-        <span id="sphere" className="word">Sphere</span>
-        <span id="learn" className="word text-primary">Learn</span>
-      </h1>
+      <div className={`flex flex-col items-center gap-6 transition-all duration-500 ease-in-out ${animationState === 'drawing' ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
+        <div className="relative w-24 h-24 animate-pulse">
+           <Image src="/logo.png" alt="Logo" fill className="object-contain rounded-full" />
+        </div>
+        <h1 className="text-5xl font-headline font-bold text-foreground">
+          <span id="sphere" className="word">Sphere</span>
+          <span id="learn" className="word text-primary">Learn</span>
+        </h1>
+      </div>
     </div>
   );
 }

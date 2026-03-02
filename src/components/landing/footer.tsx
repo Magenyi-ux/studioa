@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Twitter, Instagram, Linkedin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,7 +10,8 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-12 gap-8">
           <div className="md:col-span-4 flex flex-col items-start gap-4">
-            <Link href="/" className="text-2xl font-bold font-headline text-foreground">
+            <Link href="/" className="flex items-center gap-2 text-2xl font-bold font-headline text-foreground">
+              <Image src="/logo.png" alt="SphereLearn Logo" width={32} height={32} className="rounded-full" />
               Sphere<span className="text-primary">Learn</span>
             </Link>
             <p className="text-sm text-muted-foreground">Study Smarter, Not Harder.</p>

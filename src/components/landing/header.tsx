@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, ArrowRight } from 'lucide-react';
@@ -13,7 +14,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="text-2xl font-bold font-headline text-foreground">
+        <Link href="/" className="flex items-center gap-2 text-2xl font-bold font-headline text-foreground">
+          <Image src="/logo.png" alt="SphereLearn Logo" width={40} height={40} className="rounded-full" />
           Sphere<span className="text-primary">Learn</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
@@ -41,7 +43,8 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="grid gap-6 p-6">
-                <Link href="/" className="text-2xl font-bold font-headline text-foreground">
+                <Link href="/" className="flex items-center gap-2 text-2xl font-bold font-headline text-foreground">
+                   <Image src="/logo.png" alt="SphereLearn Logo" width={40} height={40} className="rounded-full" />
                    Sphere<span className="text-primary">Learn</span>
                 </Link>
                 <nav className="grid gap-4 mt-4">
