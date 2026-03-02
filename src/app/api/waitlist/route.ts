@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     const mailOptions = {
       from: process.env.EMAIL_USER || 'magenyigoodluck12@gmail.com',
       to: process.env.EMAIL_USER || 'magenyigoodluck12@gmail.com',
-      subject: 'New ZediLearn Waitlist Signup',
+      subject: 'New SphereLearn Waitlist Signup',
       html: `
         <h2>New Waitlist Signup</h2>
         <p><strong>Name:</strong> ${name}</p>
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { error: 'Failed to process waitlist signup' },
+      { error: 'err services err' },
       { status: 500 }
     );
   }

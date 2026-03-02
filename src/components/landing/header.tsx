@@ -14,7 +14,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="text-2xl font-bold font-headline text-foreground">
-          Zedi<span className="text-primary">Learn</span>
+          Sphere<span className="text-primary">Learn</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
           {navItems.map((item) => (
@@ -42,7 +42,7 @@ export function Header() {
             <SheetContent side="right">
               <div className="grid gap-6 p-6">
                 <Link href="/" className="text-2xl font-bold font-headline text-foreground">
-                   Zedi<span className="text-primary">Learn</span>
+                   Sphere<span className="text-primary">Learn</span>
                 </Link>
                 <nav className="grid gap-4 mt-4">
                   {navItems.map((item) => (

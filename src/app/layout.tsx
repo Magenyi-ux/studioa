@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'ZediLearn | Study Smarter, Not Harder',
+  title: 'SphereLearn | Study Smarter, Not Harder',
   description: 'AI-powered study assistant, past questions, and notes — built for students.',
 };
 
