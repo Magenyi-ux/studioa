@@ -62,10 +62,10 @@ export function WaitlistSection() {
               <div className="flex flex-col justify-center">
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Join the beta</p>
                 <CardTitle className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                  Be first in line for a smarter study experience.
+                  Get early access before everyone else.
                 </CardTitle>
                 <CardDescription className="mt-4 max-w-xl text-base leading-8 text-muted-foreground">
-                  Get exclusive access, launch updates, and early perks when SphereLearn opens its doors.
+                  Join the waitlist for first access to the app, exclusive launch updates, and a chance to shape what comes next.
                 </CardDescription>
                 <div className="mt-6 space-y-3 text-sm text-muted-foreground">
                   {['Priority beta access', 'Launch discounts', 'Early feature updates'].map((item) => (

@@ -12,33 +12,33 @@ export function HeroSection() {
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
             <Sparkles className="h-4 w-4" />
-            Built for ambitious students in Nigeria
+            AI study support for ambitious students
           </div>
           <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Study smarter with an AI companion made for exams.
+            The modern way to prepare for exams with confidence.
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl">
-            SphereLearn brings past questions, focused notes, and a calm AI study coach into one polished experience so you can prep with confidence.
+            SphereLearn gives you a smarter study routine with AI-guided help, organized notes, and quick access to the questions that matter most.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#waitlist"
               className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-primary/30"
             >
-              Get early access <ArrowRight className="ml-2 h-4 w-4" />
+              Join the waitlist <ArrowRight className="ml-2 h-4 w-4" />
             </a>
             <a
               href="#features"
               className="inline-flex items-center justify-center rounded-full border border-border bg-background/80 px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:border-primary/40 hover:text-primary"
             >
-              Explore the features
+              See what’s inside
             </a>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {[
-              ['10k+', 'students waiting'],
-              ['24/7', 'offline support'],
-              ['100%', 'exam focus'],
+              ['1-click', 'early access'],
+              ['AI', 'study coach'],
+              ['Offline', 'ready'],
             ].map(([value, label]) => (
               <div key={label} className="rounded-2xl border border-border/70 bg-background/70 p-4 shadow-sm">
                 <p className="text-xl font-semibold text-foreground">{value}</p>
@@ -62,10 +62,10 @@ export function HeroSection() {
               />
             )}
             <div className="absolute bottom-8 left-8 right-8 rounded-2xl border border-white/20 bg-slate-950/75 p-4 text-white shadow-xl backdrop-blur">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-300">What students love</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-300">Designed for students</p>
               <div className="mt-2 flex items-start gap-2">
                 <BadgeCheck className="mt-0.5 h-5 w-5 text-primary" />
-                <p className="text-sm leading-6 text-slate-100">Past questions, notes, and AI support in one calm workspace.</p>
+                <p className="text-sm leading-6 text-slate-100">Everything is organized to help you study with less stress and more momentum.</p>
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ export function Footer() {
               Sphere<span className="text-primary">Learn</span>
             </Link>
             <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              A focused study platform built to help students revise smarter, stay organized, and feel more prepared for every exam.
+              A focused study platform built to help students revise smarter, stay organized, and feel more prepared for every exam season.
             </p>
             <div className="mt-6 flex space-x-4">
               <a href="#" aria-label="Twitter" className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary">

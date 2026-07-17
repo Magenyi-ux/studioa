@@ -40,12 +40,12 @@ export function FeaturesSection() {
     <section id="features" className="py-20 sm:py-24 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Why students choose SphereLearn</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Built for the way students actually learn</p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            A calmer way to study that actually fits your routine.
+            A smarter study setup for exams, revision, and staying on track.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Everything is designed to reduce friction, sharpen your focus, and help you retain more with less stress.
+            From past questions to AI support, every feature is shaped to make studying feel lighter and more focused.
           </p>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
