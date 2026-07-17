@@ -11,24 +11,24 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
       <div className="container flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="text-2xl font-bold font-headline text-foreground">
+        <Link href="/" className="text-2xl font-bold font-headline tracking-tight text-foreground">
           Sphere<span className="text-primary">Learn</span>
         </Link>
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <nav className="hidden items-center space-x-8 text-sm font-medium md:flex">
           {navItems.map((item) => (
             <a key={item.label} href={item.href} className="text-muted-foreground transition-colors hover:text-foreground">
               {item.label}
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-2 md:flex">
             <ThemeToggle />
             <a href="#waitlist">
-              <Button>
-                Join Waitlist <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+              <Button className="rounded-full px-5">
+                Join Waitlist <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
           </div>
@@ -42,16 +42,16 @@ export function Header() {
             <SheetContent side="right">
               <div className="grid gap-6 p-6">
                 <Link href="/" className="text-2xl font-bold font-headline text-foreground">
-                   Sphere<span className="text-primary">Learn</span>
+                  Sphere<span className="text-primary">Learn</span>
                 </Link>
-                <nav className="grid gap-4 mt-4">
+                <nav className="mt-4 grid gap-4">
                   {navItems.map((item) => (
                     <a key={item.label} href={item.href} className="text-lg font-medium text-foreground transition-colors hover:text-primary">
                       {item.label}
                     </a>
                   ))}
                 </nav>
-                 <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4">
                   <ThemeToggle />
                   <a href="#waitlist" className="flex-grow">
                     <Button className="w-full" size="lg">Join Waitlist</Button>

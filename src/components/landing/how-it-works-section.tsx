@@ -1,53 +1,60 @@
-import { UserPlus, BookOpenCheck, TrendingUp } from 'lucide-react';
+import { BookOpenCheck, TrendingUp, UserPlus } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 type Step = {
   icon: LucideIcon;
   title: string;
   description: string;
+  number: string;
 };
 
 const steps: Step[] = [
   {
     icon: UserPlus,
-    title: 'Join the Waitlist',
-    description: 'A simple, one-step signup to get early access, launch discounts, and updates.',
+    number: '01',
+    title: 'Join the waitlist',
+    description: 'Sign up once to get early access, launch updates, and a front-row seat to the beta.',
   },
   {
     icon: BookOpenCheck,
-    title: 'Start Studying',
-    description: 'Dive into past questions, chat with your AI assistant, and use powerful study tools.',
+    number: '02',
+    title: 'Start studying',
+    description: 'Jump into past questions, AI guidance, and a structured workspace designed for real revision.',
   },
   {
     icon: TrendingUp,
-    title: 'Track Your Progress',
-    description: 'Save solutions, review personalized tips, and watch your knowledge and confidence grow.',
+    number: '03',
+    title: 'Grow with every session',
+    description: 'Track your consistency and build confidence as your revision becomes easier and more focused.',
   },
 ];
 
 export function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="py-20 md:py-28">
+    <section id="how-it-works" className="bg-secondary/40 py-20 sm:py-24 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold">Get Started in Seconds</h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Your journey to smarter studying is just three simple steps away.
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">How it works</p>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Get started in three simple steps.
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            The experience stays simple from sign-up to revision, so you can focus on learning instead of setup.
           </p>
         </div>
-        <div className="relative max-w-4xl mx-auto">
-          <div className="hidden md:block absolute top-8 left-0 w-full h-0.5 bg-border -z-10"></div>
-          <div className="grid md:grid-cols-3 gap-12 text-center">
-            {steps.map((step, index) => (
-              <div key={step.title} className="flex flex-col items-center">
-                <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-full bg-background border-2 border-primary shadow-lg shadow-primary/20">
-                  <step.icon className="w-8 h-8 text-primary" />
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          {steps.map((step) => (
+            <div key={step.title} className="rounded-[1.75rem] border border-border/70 bg-background/80 p-8 shadow-sm">
+              <div className="flex items-center justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <step.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-headline font-semibold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+                <span className="text-sm font-semibold text-primary">{step.number}</span>
               </div>
-            ))}
-          </div>
+              <h3 className="mt-6 text-xl font-semibold text-foreground">{step.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{step.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

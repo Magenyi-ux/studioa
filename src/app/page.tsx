@@ -8,7 +8,6 @@ import { HowItWorksSection } from '@/components/landing/how-it-works-section';
 import { WaitlistSection } from '@/components/landing/waitlist-section';
 import { Footer } from '@/components/landing/footer';
 import { SplashScreen } from '@/components/splash-screen';
-import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,9 +17,9 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex min-h-screen flex-col bg-background">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-1">
         <HeroSection />
         <FeaturesSection />
         <HowItWorksSection />
